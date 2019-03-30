@@ -5,6 +5,8 @@ The Assets used are from Kenney.nl, they offer great and free to use (also comme
 
 # Current Version:
 
-You can find the most recent build on: https://www.grinning-games.de/2d_rpg/2D%20RPG.html
+You can find the most recent build as html5 here: https://www.grinning-games.de/2d_rpg/2D%20RPG.html
+
+To get the game working you could have to use a different browser. For me opera didnt work, but firefox did.
 
 This game right now is purely for experimentation. So dont expect to find much fun besides bugs and glitches. This is a learning project. Depending on the success, this could develop to a full fledged project.
