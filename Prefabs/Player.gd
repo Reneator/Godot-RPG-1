@@ -1,10 +1,5 @@
 extends KinematicBody2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-var on_floor = false;
 var direction = Vector2();
 var velocity = Vector2();
 var distance = Vector2();
@@ -19,17 +14,19 @@ func _ready():
 
 func _physics_process(delta):
 	
-	var direction = Vector2()
+	direction = Vector2()
 	
 	if Input.is_action_pressed("ui_right"):
 		$sprite.flip_h = false
 		direction.x = 1
-	if Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("ui_left"):
 		$sprite.flip_h = true
 		direction.x = -1	
 	if Input.is_action_pressed("ui_up"):
-		jump()
-		
+		if is_on_floor():
+			velocity.y = -jump_force
+
+
 
 	distance.x = speed*delta
 	velocity.x = (direction.x*distance.x)/delta
@@ -38,15 +35,13 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity,Vector2(0,-1))
 	
 	process_collisions()
-	
-	if is_on_floor() && !on_floor:
-		on_floor = true
-		print ("Floor")
+
+	play_animation()
 	
 
-func jump():
-#	if is_on_floor():
-		velocity.y = -jump_force
+#func jump():
+
+		
 		
 
 func process_collisions():
@@ -58,12 +53,22 @@ func process_collisions():
 	if(collisions == null):
 		return
 		
-#	print (str(collisions.collider.get_groups()))
 		
 	if (collisions.collider.is_in_group("collectible")):
 		print (str(collisions))
 		
 		
+	
+	
+	
+func play_animation():
+	print ("directionx: "+ str(direction.x))
+	if (is_on_floor() && direction.x == 0):
+		$sprite.play("Idle")
+	if(!is_on_floor()):
+		$sprite.play("Jump")
+	if(is_on_floor() && direction.x != 0):
+		$sprite.play("Move")
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -73,5 +78,6 @@ func process_collisions():
 
 func _on_Area2D_body_entered(body):
 	if (body.is_in_group("collectible")):
-		print (str(body.collect()))
+		body.collect()
+		print ("collected: "+ body.name)
 	pass # Replace with function body.
