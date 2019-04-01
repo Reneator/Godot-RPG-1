@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Backgrounds/backgroundColorForest.png" type="Texture" id=1]
 [ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Prefabs/Diamond.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Prefabs/DiamondFountain.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scripts/HealthDisplay.gd" type="Script" id=6]
+[ext_resource path="res://Prefabs/Enemy.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 65, 0, 65, 63, 0, 63 )
@@ -75,4 +76,7 @@ margin_bottom = -51.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "global.hello"
 script = ExtResource( 6 )
+
+[node name="Enemy" parent="." instance=ExtResource( 7 )]
+position = Vector2( 218, 89 )
 

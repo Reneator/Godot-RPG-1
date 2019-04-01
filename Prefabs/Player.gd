@@ -7,6 +7,9 @@ var jump_force = 500;
 var speed = 200;
 var gravity = 1300;
 
+var left = false;
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -17,10 +20,15 @@ func _physics_process(delta):
 	direction = Vector2()
 	
 	if Input.is_action_pressed("ui_right"):
-		$sprite.flip_h = false
+		if left:
+			apply_scale(Vector2(-1, 1))
+			left = false
 		direction.x = 1
+			
 	elif Input.is_action_pressed("ui_left"):
-		$sprite.flip_h = true
+		if !left:
+			apply_scale(Vector2(-1, 1))	
+			left = true	
 		direction.x = -1	
 	if Input.is_action_pressed("ui_up"):
 		if is_on_floor():
@@ -54,15 +62,15 @@ func process_collisions():
 		return
 		
 		
-	if (collisions.collider.is_in_group("collectible")):
-		print (str(collisions))
+#	if (collisions.collider.is_in_group("collectible")):
+#		print (str(collisions))
 		
 		
 	
 	
 	
 func play_animation():
-	print ("directionx: "+ str(direction.x))
+#	print ("directionx: "+ str(direction.x))
 	if (is_on_floor() && direction.x == 0):
 		$sprite.play("Idle")
 	if(!is_on_floor()):
@@ -79,5 +87,11 @@ func play_animation():
 func _on_Area2D_body_entered(body):
 	if (body.is_in_group("collectible")):
 		body.collect()
-		print ("collected: "+ body.name)
+#		print ("collected: "+ body.name)
+		
+	if (body.is_in_group("enemy")):
+		if(body.has_method("hit")):
+			body.hit()
 	pass # Replace with function body.
+
+
