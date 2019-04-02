@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/HealthDisplay.gd" type="Script" id=1]
+
+[node name="SignalTriggeredText" type="RichTextLabel"]
+margin_left = 37.0
+margin_top = -69.0
+margin_right = 122.0
+margin_bottom = -51.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "global.hello"
+script = ExtResource( 1 )
+

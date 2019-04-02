@@ -20,8 +20,8 @@ func _ready():
 func spawnDiamond():
 	var diamond = load("res://Prefabs/Diamond.tscn").instance()
 	add_child(diamond)
-	emit_signal("_on_spawn")
-	global._set_health(global.health -1 )
+	global._set_health(global.health -1 )	
+	emit_signal("_on_spawn",global.health)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

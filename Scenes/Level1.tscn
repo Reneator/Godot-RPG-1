@@ -1,12 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Backgrounds/backgroundColorForest.png" type="Texture" id=1]
 [ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Tiles/platformPack_tile001.png" type="Texture" id=3]
 [ext_resource path="res://Prefabs/Diamond.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Prefabs/DiamondFountain.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scripts/HealthDisplay.gd" type="Script" id=6]
-[ext_resource path="res://Prefabs/Enemy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Prefabs/Enemy.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 65, 0, 65, 63, 0, 63 )
@@ -54,6 +53,7 @@ texture = ExtResource( 1 )
 current = true
 
 [node name="LevelStructur" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="TileMap" type="TileMap" parent="LevelStructur"]
 tile_set = SubResource( 3 )
@@ -68,15 +68,6 @@ gravity_scale = 9.8
 [node name="DiamondFountain" parent="." instance=ExtResource( 5 )]
 position = Vector2( 227.684, -67.3027 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 37.0
-margin_top = -69.0
-margin_right = 122.0
-margin_bottom = -51.0
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "global.hello"
-script = ExtResource( 6 )
-
-[node name="Enemy" parent="." instance=ExtResource( 7 )]
-position = Vector2( 218, 89 )
+[node name="Enemy" parent="." instance=ExtResource( 6 )]
+position = Vector2( 218.721, 98.3764 )
 
