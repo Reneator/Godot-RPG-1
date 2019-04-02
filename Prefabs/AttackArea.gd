@@ -27,6 +27,10 @@ func activate():
 		print("attacking")
 		timer.start(1)
 		attacking = true
+		var bodies = get_overlapping_bodies()
+		for body in bodies:
+			_on_AttackArea_body_entered(body)
+
 		
 	
 
