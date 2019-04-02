@@ -10,3 +10,10 @@ You can find the most recent build as html5 here: https://www.grinning-games.de/
 To get the game working you could have to use a different browser. For me opera didnt work, but firefox did.
 
 This game right now is purely for experimentation. So dont expect to find much fun besides bugs and glitches. This is a learning project. Depending on the success, this could develop to a full fledged project.
+
+Asset-Packages used:
+
+https://www.kenney.nl/assets/platformer-art-extended-enemies
+https://www.kenney.nl/assets/simplified-platformer-pack
+https://www.kenney.nl/assets/background-elements-redux
+
