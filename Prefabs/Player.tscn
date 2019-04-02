@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Prefabs/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Characters/platformChar_idle.png" type="Texture" id=2]
@@ -28,6 +28,8 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="ShaderMaterial" id=3]
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
@@ -43,6 +45,7 @@ animation = "Idle"
 script = ExtResource( 6 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="sprite/AttackArea"]
+material = SubResource( 3 )
 position = Vector2( -2.78085, -0.46347 )
 polygon = PoolVector2Array( 35.6272, -4.95718, 81.2796, -31.8388, 99.5869, 5.47102, 87.7682, 43.2443, 36.5542, 23.7783 )
 

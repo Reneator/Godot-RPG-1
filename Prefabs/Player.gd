@@ -19,6 +19,9 @@ func _physics_process(delta):
 	
 	direction = Vector2()
 	
+	if Input.is_key_pressed(KEY_SPACE):
+		$sprite/AttackArea.activate()
+	
 	if Input.is_action_pressed("ui_right"):
 		if left:
 			apply_scale(Vector2(-1, 1))
