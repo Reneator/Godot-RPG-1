@@ -6,6 +6,7 @@ extends Area2D
 
 var timer = null
 var attacking = false
+var attack_delay = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,25 +23,32 @@ func _ready():
 #	pass
 
 func activate():
-	print (str(timer.time_left))
 	if(!attacking):
 		print("attacking")
-		timer.start(1)
 		attacking = true
+		
+		if (attack_delay):
+			timer.start(1)
+		else:
+			attacking = false
+
 		var bodies = get_overlapping_bodies()
 		for body in bodies:
-			_on_AttackArea_body_entered(body)
+			attack(body)
 
 		
 	
 
 func _on_AttackArea_body_entered(body):
 	if(attacking):
-		print ("Entered :" + body.name)
+		attack(body)
+#	pass # Replace with function body.
+
+func attack(body):
 		if(body.is_in_group("enemy")):
+			print("attacking: "+ body.name)
 			if(body.has_method("hit")):
 				body.hit()
-	pass # Replace with function body.
 
 
 func stop_attack():

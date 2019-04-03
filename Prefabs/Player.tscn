@@ -42,11 +42,12 @@ frames = SubResource( 2 )
 animation = "Idle"
 
 [node name="AttackArea" type="Area2D" parent="sprite"]
+position = Vector2( 76, 4 )
 script = ExtResource( 6 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="sprite/AttackArea"]
 material = SubResource( 3 )
-position = Vector2( -2.78085, -0.46347 )
+position = Vector2( -73, -5 )
 polygon = PoolVector2Array( 35.6272, -4.95718, 81.2796, -31.8388, 99.5869, 5.47102, 87.7682, 43.2443, 36.5542, 23.7783 )
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -55,5 +56,4 @@ position = Vector2( 0, 15 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
 
-[connection signal="body_entered" from="sprite/AttackArea" to="sprite/AttackArea" method="_on_AttackArea_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
