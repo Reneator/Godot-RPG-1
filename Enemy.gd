@@ -39,3 +39,8 @@ func _on_DamageArea_body_entered(body):
 #		print ("Groups of "+ body.name+ ": " + str(body.get_groups()))
 		body.find_node("Hitable").hit()
 	pass # Replace with function body.
+
+
+func _on_Hitable__on_death():
+	get_parent().remove_child(self)
+	pass # Replace with function body.
