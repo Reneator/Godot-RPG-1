@@ -45,10 +45,10 @@ func _on_AttackArea_body_entered(body):
 #	pass # Replace with function body.
 
 func attack(body):
-		if(body.is_in_group("enemy")):
-			print("attacking: "+ body.name)
-			if(body.has_method("hit")):
-				body.hit()
+	if(body.is_in_group("hittable")):
+		print("attacking: "+ body.name)		
+		body.get_node("Hitable").hit()
+		
 
 
 func stop_attack():

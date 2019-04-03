@@ -10,7 +10,8 @@ signal on_hit(string);
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$SignalTriggeredText.change_text("Enemy Hp!")
+	$SignalTriggeredText.set_text("Enemy Hp!")
+	$AnimatedSprite.playing = true
 	pass # Replace with function body.
 
 
@@ -21,8 +22,20 @@ func hit():
 	if(hp <= 0):
 		print ("Enemy died")
 		get_parent().remove_child(self)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 
 # Replace with function body.
+
+
+
+
+func _on_DamageArea_body_entered(body):
+#	print ("Damage-Area: "+ body.name)
+	if(body.is_in_group("hittable") && body != self):
+		print ("Is Hittable" + body.name)
+#		print ("Groups of "+ body.name+ ": " + str(body.get_groups()))
+		body.find_node("Hitable").hit()
+	pass # Replace with function body.

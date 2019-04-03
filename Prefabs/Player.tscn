@@ -1,59 +1,73 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Prefabs/Player.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Characters/platformChar_walk1.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Characters/platformChar_walk2.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Characters/platformChar_idle.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Characters/platformChar_jump.png" type="Texture" id=5]
-[ext_resource path="res://Prefabs/AttackArea.gd" type="Script" id=6]
+[ext_resource path="res://Prefabs/player/PlayerCollisionShape.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Characters/platformChar_walk1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Characters/platformChar_walk2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Characters/platformChar_idle.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Characters/platformChar_jump.png" type="Texture" id=6]
+[ext_resource path="res://Prefabs/AttackArea.gd" type="Script" id=7]
+[ext_resource path="res://Prefabs/UI/SignalTriggeredText.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Prefabs/Interfaces/Hitable.tscn" type="PackedScene" id=9]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 27, 34 )
-
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "Move",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "Jump",
 "speed": 5.0
 } ]
 
-[sub_resource type="ShaderMaterial" id=3]
+[sub_resource type="ShaderMaterial" id=2]
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"player",
+]]
 script = ExtResource( 1 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 15 )
-shape = SubResource( 1 )
 
 [node name="sprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "Idle"
 
 [node name="AttackArea" type="Area2D" parent="sprite"]
 position = Vector2( 76, 4 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="sprite/AttackArea"]
-material = SubResource( 3 )
+material = SubResource( 2 )
 position = Vector2( -73, -5 )
 polygon = PoolVector2Array( 35.6272, -4.95718, 81.2796, -31.8388, 99.5869, 5.47102, 87.7682, 43.2443, 36.5542, 23.7783 )
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 0, 15 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 1 )
+[node name="CollisionShape2D" parent="Area2D" instance=ExtResource( 2 )]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D2" parent="RigidBody2D" instance=ExtResource( 2 )]
+position = Vector2( 0, 15 )
+
+[node name="SignalTriggeredText" parent="." instance=ExtResource( 8 )]
+margin_left = -37.6143
+margin_top = -61.6849
+margin_right = 47.3857
+margin_bottom = -43.6849
+
+[node name="Hitable" parent="." instance=ExtResource( 9 )]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="_on_hit" from="Hitable" to="SignalTriggeredText" method="change_text"]

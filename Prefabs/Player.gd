@@ -23,24 +23,29 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("ui_right"):
 		if left:
-			apply_scale(Vector2(-1, 1))
+			$sprite.apply_scale(Vector2(-1, 1))
 			left = false
 		direction.x = 1
 			
 	elif Input.is_action_pressed("ui_left"):
 		if !left:
-			apply_scale(Vector2(-1, 1))	
+			$sprite.apply_scale(Vector2(-1, 1))	
 			left = true	
 		direction.x = -1	
 	if Input.is_action_pressed("ui_up"):
 		if is_on_floor():
 			velocity.y = -jump_force
 
+	var _gravity 
+	if(velocity.y < 0 && Input.is_action_pressed("ui_up")):
+		_gravity = 500
+	else:
+		_gravity = gravity
 
 
 	distance.x = speed*delta
 	velocity.x = (direction.x*distance.x)/delta
-	velocity.y += gravity*delta
+	velocity.y += _gravity*delta
 	
 	velocity = move_and_slide(velocity,Vector2(0,-1))
 	
