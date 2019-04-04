@@ -4,8 +4,8 @@
 [ext_resource path="res://Prefabs/player/PlayerCollisionShape.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Characters/platformChar_walk1.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Characters/platformChar_walk2.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Characters/platformChar_idle.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Characters/platformChar_jump.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Characters/platformChar_jump.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Characters/platformChar_idle.png" type="Texture" id=6]
 [ext_resource path="res://Prefabs/AttackArea.gd" type="Script" id=7]
 [ext_resource path="res://Prefabs/UI/SignalTriggeredText.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Prefabs/Interfaces/Hitable.tscn" type="PackedScene" id=9]
@@ -19,12 +19,12 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "Idle",
+"name": "Jump",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "Jump",
+"name": "Idle",
 "speed": 5.0
 } ]
 

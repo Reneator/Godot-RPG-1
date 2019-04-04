@@ -15,13 +15,13 @@ func _ready():
 	pass # Replace with function body.
 
 
-func hit():
-	hp -= 10;
-	print (hp)
-	emit_signal("on_hit", hp);
-	if(hp <= 0):
-		print ("Enemy died")
-		get_parent().remove_child(self)
+#func hit():
+#	hp -= 10;
+#	print (hp)
+#	emit_signal("on_hit", hp);
+#	if(hp <= 0):
+#		print ("Enemy died")
+#		get_parent().remove_child(self)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

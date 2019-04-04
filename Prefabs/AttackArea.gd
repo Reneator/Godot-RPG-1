@@ -47,6 +47,7 @@ func _on_AttackArea_body_entered(body):
 func attack(body):
 	if(body.is_in_group("hittable")):
 		print("attacking: "+ body.name)		
+#		body.hit()
 		body.get_node("Hitable").hit()
 		
 
