@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Prefabs/Diamond.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Items/platformPack_item010.png" type="Texture" id=2]
-[ext_resource path="res://Prefabs/Item/TypeItem.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefabs/Item/Item.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefabs/Interfaces/Collectable.tscn" type="PackedScene" id=4]
 
 [node name="Diamond" type="RigidBody2D" groups=[
 "collectible",
@@ -17,5 +18,7 @@ texture = ExtResource( 2 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 0.457306, 13.9342, 17.9347, -3.146, 8.55794, -13.1939, -7.20949, -13.1939, -17.0201, -3.54321, 0.457306, 13.9342 )
 
-[node name="TypeItem" parent="." instance=ExtResource( 3 )]
+[node name="Item" parent="." instance=ExtResource( 3 )]
+
+[node name="Collectable" parent="." instance=ExtResource( 4 )]
 

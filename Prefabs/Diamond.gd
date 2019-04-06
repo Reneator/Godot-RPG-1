@@ -1,4 +1,4 @@
-extends "res://Scripts/Collectible.gd"
+extends RigidBody2D
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -6,8 +6,9 @@ extends "res://Scripts/Collectible.gd"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$TypeItem.value = 100
-	$TypeItem.item_name = "Diamond"
+	$Item.value = 100
+	$Item.item_name = "Diamond"
+	$Item.model = "res://Prefabs/Item/Models/ModelDiamond.tscn"
 	pass # Replace with function body.
 	
 

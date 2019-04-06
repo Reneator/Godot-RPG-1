@@ -22,12 +22,18 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "Item",
 "language": "GDScript",
-"path": "res://Prefabs/Item/item.gd"
+"path": "res://Prefabs/Item/Item.gd"
+}, {
+"base": "Node",
+"class": "ItemGenerator",
+"language": "GDScript",
+"path": "res://Prefabs/Item/ItemGenerator.gd"
 } ]
 _global_script_class_icons={
 "CharacterEquipmentSlot": "",
 "CharacterInventory": "",
-"Item": ""
+"Item": "",
+"ItemGenerator": ""
 }
 
 [application]

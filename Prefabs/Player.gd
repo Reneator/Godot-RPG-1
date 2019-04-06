@@ -58,6 +58,7 @@ func _physics_process(delta):
 
 func _input(event):
 		if event.is_action_pressed("ui_attack") && not event.is_echo():
+			spawn_Diamond()
 			$sprite/AttackArea.activate()
 			$sprite.play("Attack")
 			attacking = true
@@ -106,12 +107,22 @@ func play_animation():
 
 
 func _on_Area2D_body_entered(body):
-	if (body.is_in_group("collectible")):
+	if (body.is_in_group("collectable")):
 		if(body.is_in_group("Item")):
-			$Inventory.add_item(body.get_node("TypeItem"))
-		body.collect()
+			$Inventory.add_item(body.get_node("Item"))
+		body.get_node("Collectable").collect()
 #		print ("collected: "+ body.name)
 		
 	pass # Replace with function body.
 
 
+func spawn_Diamond():
+	var item = Item.new()
+	item.value = 100
+	item.item_name = "Diamond"
+	item.model = "res://Prefabs/Item/Models/ModelDiamond.tscn"
+	var itemGenerator = load("res://Prefabs/Item/ItemGenerator.gd").new()
+	var itemNode = itemGenerator.generateItemNode(item)
+	get_parent().get_node("DiamondFountain").call_deferred("add_child",itemNode)
+#	get_tree().current_scene().get_node("DiamondFountain").add_child(itemNode)
+	
