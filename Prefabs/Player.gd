@@ -7,6 +7,8 @@ var jump_force = 500;
 var speed = 200;
 var gravity = 1300;
 
+var attacking = false;
+
 var left = false;
 
 
@@ -57,6 +59,11 @@ func _physics_process(delta):
 func _input(event):
 		if event.is_action_pressed("ui_attack") && not event.is_echo():
 			$sprite/AttackArea.activate()
+			$sprite.play("Attack")
+			attacking = true
+			yield(get_tree().create_timer(1.0), "timeout")
+			print ("attacking stop")
+			attacking = false
 	
 #func jump():
 
@@ -81,6 +88,9 @@ func process_collisions():
 	
 	
 func play_animation():
+	if(attacking):
+		$sprite.play("Attack")
+		return
 #	print ("directionx: "+ str(direction.x))
 	if (is_on_floor() && direction.x == 0):
 		$sprite.play("Idle")
@@ -97,6 +107,8 @@ func play_animation():
 
 func _on_Area2D_body_entered(body):
 	if (body.is_in_group("collectible")):
+		if(body.is_in_group("Item")):
+			$Inventory.add_item(body.get_node("TypeItem"))
 		body.collect()
 #		print ("collected: "+ body.name)
 		

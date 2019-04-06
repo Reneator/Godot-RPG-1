@@ -1,23 +1,19 @@
-extends "res://Scripts/Collectible.gd"
+extends Item
 
+enum EquipmentSlot {HEAD, SHOULDER};
+#var
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$TypeItem.value = 100
-	$TypeItem.item_name = "Diamond"
 	pass # Replace with function body.
 	
 
-func _physics_process(delta):
+func _method():
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-func collect():
-	global._set_health(global.health + 1)
-	get_parent().remove_child(self)

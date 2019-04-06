@@ -37,7 +37,7 @@ func _on_DamageArea_body_entered(body):
 	if(body.is_in_group("hittable") && body != self):
 		print ("Is Hittable" + body.name)
 #		print ("Groups of "+ body.name+ ": " + str(body.get_groups()))
-		body.find_node("Hitable").hit()
+		body.find_node("Hitable").hit(self)
 	pass # Replace with function body.
 
 

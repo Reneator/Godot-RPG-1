@@ -1,4 +1,8 @@
-extends "res://Scripts/Collectible.gd"
+extends Node
+class_name CharacterEquipmentSlot
+
+var type
+var equippedItem
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -6,18 +10,11 @@ extends "res://Scripts/Collectible.gd"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$TypeItem.value = 100
-	$TypeItem.item_name = "Diamond"
 	pass # Replace with function body.
-	
-
-func _physics_process(delta):
-	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 
-func collect():
-	global._set_health(global.health + 1)
-	get_parent().remove_child(self)
+func init(slotType):
+	type = slotType

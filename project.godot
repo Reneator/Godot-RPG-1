@@ -8,9 +8,26 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "CharacterEquipmentSlot",
+"language": "GDScript",
+"path": "res://Prefabs/Item/CharacterEquipmentSlot.gd"
+}, {
+"base": "Node",
+"class": "CharacterInventory",
+"language": "GDScript",
+"path": "res://Prefabs/Item/CharacterInventory.gd"
+}, {
+"base": "Node",
+"class": "Item",
+"language": "GDScript",
+"path": "res://Prefabs/Item/item.gd"
+} ]
 _global_script_class_icons={
-
+"CharacterEquipmentSlot": "",
+"CharacterInventory": "",
+"Item": ""
 }
 
 [application]

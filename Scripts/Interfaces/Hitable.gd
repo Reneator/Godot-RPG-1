@@ -8,8 +8,8 @@ signal _on_death()
 func _ready():
 	get_parent().add_to_group("hittable")
 
-func hit():
-	print (get_parent().name + " got hit!")
+func hit(other):
+	print (get_parent().name + " got hit by "+ other.name + " !")
 	hp -= 10	
 	emit_signal("_on_hit", hp)
 	if(hp <= 0):

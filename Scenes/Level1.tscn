@@ -53,7 +53,6 @@ texture = ExtResource( 1 )
 current = true
 
 [node name="LevelStructur" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="TileMap" type="TileMap" parent="LevelStructur"]
 tile_set = SubResource( 3 )
