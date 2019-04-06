@@ -1,0 +1,14 @@
+Scaling Perks (more dmg for mana etc.)
+
+
+Todo:
+
+Build prototype: 
+- Hero
+- Monster
+- Spawn monster on button-press
+- Attack the monster (attack-animation or just spawning a zone in front of the hero to dmg the monster)
+- Damage-zone for the player to test out damage-scalings
+- Item-spawner
+- Collecting items
+- Inventory
