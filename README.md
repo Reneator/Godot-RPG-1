@@ -11,9 +11,15 @@ To get the game working you could have to use a different browser. For me opera 
 
 This game right now is purely for experimentation. So dont expect to find much fun besides bugs and glitches. This is a learning project. Depending on the success, this could develop to a full fledged project.
 
+
+# Usage of other Projects or external Assets
+
 Asset-Packages used:
 
 https://www.kenney.nl/assets/platformer-art-extended-enemies
 https://www.kenney.nl/assets/simplified-platformer-pack
 https://www.kenney.nl/assets/background-elements-redux
+
+Using InventoryExample to learn making an inventory, but i try to put my own spin to it.
+https://godotengine.org/asset-library/asset/271
 
