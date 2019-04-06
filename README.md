@@ -11,6 +11,9 @@ To get the game working you could have to use a different browser. For me opera 
 
 This game right now is purely for experimentation. So dont expect to find much fun besides bugs and glitches. This is a learning project. Depending on the success, this could develop to a full fledged project.
 
+
+#Usage of other Projects or external Assets
+
 Asset-Packages used:
 
 https://www.kenney.nl/assets/platformer-art-extended-enemies
