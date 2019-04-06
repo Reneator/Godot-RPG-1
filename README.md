@@ -17,3 +17,6 @@ https://www.kenney.nl/assets/platformer-art-extended-enemies
 https://www.kenney.nl/assets/simplified-platformer-pack
 https://www.kenney.nl/assets/background-elements-redux
 
+Using InventoryExample to learn making an inventory, but i try to put my own spin to it.
+https://godotengine.org/asset-library/asset/271
+
