@@ -11,6 +11,8 @@ var attacking = false;
 
 var left = false;
 
+var Item = load("res://Prefabs/Item/Item.gd")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -65,6 +67,13 @@ func _input(event):
 			yield(get_tree().create_timer(1.0), "timeout")
 #			print ("attacking stop")
 			attacking = false
+			
+		if event.is_action_pressed("ui_inventory") && not event.is_echo():
+			openInventory()
+			
+		if event.is_action_pressed("ui_inventory_eject") && not event.is_echo():
+			dropItem()
+
 	
 #func jump():
 
@@ -109,8 +118,9 @@ func play_animation():
 func _on_Area2D_body_entered(body):
 	if (body.is_in_group("collectable")):
 		if(body.is_in_group("Item")):
-			$Inventory.add_item(body.get_node("Item"))
-		body.get_node("Collectable").collect()
+			var added = $Inventory.add_item(body.get_node("Item"))
+			if (added):
+				body.get_node("Collectable").collect()
 #		print ("collected: "+ body.name)
 		
 	pass # Replace with function body.
@@ -126,3 +136,13 @@ func spawn_Diamond():
 	get_parent().get_node("DiamondFountain").call_deferred("add_child",itemNode)
 #	get_tree().current_scene().get_node("DiamondFountain").add_child(itemNode)
 	
+
+func openInventory():
+	$Inventory.print_items()
+	
+func dropItem():
+	var itemNode = $Inventory.return_and_remove_last_item_node()
+	if (itemNode == null):
+		return
+	itemNode.global_position = $sprite/ItemSpawnPoint.global_position
+	get_parent().get_parent().add_child(itemNode)

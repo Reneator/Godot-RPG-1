@@ -50,6 +50,9 @@ position = Vector2( 0, 15 )
 frames = SubResource( 1 )
 animation = "Idle"
 
+[node name="ItemSpawnPoint" type="Node2D" parent="sprite"]
+position = Vector2( 67.7867, -0.487675 )
+
 [node name="AttackArea" type="Area2D" parent="sprite"]
 position = Vector2( 76, 4 )
 script = ExtResource( 8 )

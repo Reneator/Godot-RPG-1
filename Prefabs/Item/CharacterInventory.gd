@@ -13,7 +13,6 @@ func _ready():
 	
 	printCharacterInventoryContent() 
 	
-	
 func printCharacterInventoryContent():
 	var printString = "Inventory got initialized with slots: "
 	for slot in slots:

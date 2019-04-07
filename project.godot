@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Prefabs/Item/EquipmentSlot.gd"
 }, {
+"base": "Node",
+"class": "Game_Object",
+"language": "GDScript",
+"path": "res://Scripts/Game_Object.gd"
+}, {
 "base": "Reference",
 "class": "HitController",
 "language": "GDScript",
@@ -34,7 +39,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Prefabs/Interfaces/Hitable.gd"
 }, {
-"base": "Node",
+"base": "Game_Object",
 "class": "Item",
 "language": "GDScript",
 "path": "res://Prefabs/Item/Item.gd"
@@ -63,6 +68,7 @@ _global_script_class_icons={
 "CharacterInventory": "",
 "DeathController": "",
 "EquipmentSlot": "",
+"Game_Object": "",
 "HitController": "",
 "Hitable": "",
 "Item": "",
@@ -90,6 +96,16 @@ RewardController="*res://Prefabs/Controllers/RewardController.gd"
 ui_attack={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_inventory={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":73,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_inventory_eject={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"unicode":0,"echo":false,"script":null)
  ]
 }
 
