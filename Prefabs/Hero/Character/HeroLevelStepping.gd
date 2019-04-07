@@ -1,8 +1,4 @@
 extends Node
-class_name CharacterEquipmentSlot
-
-var type
-var equippedItem
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -15,6 +11,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-func init(slotType):
-	type = slotType

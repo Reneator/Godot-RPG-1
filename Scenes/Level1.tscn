@@ -42,7 +42,6 @@ points = PoolVector2Array( 0, 0, 65, 0, 65, 63, 0, 63 )
 [node name="Node2D" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-editor/display_folded = true
 position = Vector2( 548.823, 586.586 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -84,7 +83,6 @@ texture = ExtResource( 7 )
 centered = false
 
 [node name="Test-Dialog" type="WindowDialog" parent="CanvasLayer"]
-visible = true
 margin_left = 177.866
 margin_top = 192.94
 margin_right = 225.866

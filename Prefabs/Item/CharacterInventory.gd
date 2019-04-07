@@ -2,30 +2,52 @@ extends Node
 class_name CharacterInventory
 
 var slots = [];
+var Slot = load("res://Prefabs/Item/EquipmentSlot.gd")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	var Slot = load("res://Prefabs/Item/CharacterEquipmentSlot.gd")
 	
-	var slot1 = Slot.new()
-	slot1.init("HEAD")
-	slots.append(slot1)
+	addSlot("WOW")
+	addSlot("HEAD")
+	addSlot("SHOULDER")
 	
-	var slot2 = Slot.new()
-	slot2.init("SHOULDER")
-	slots.append(slot2)
-	
-	printCharacterInventoryContent()
+	printCharacterInventoryContent() 
 	
 	
 func printCharacterInventoryContent():
 	var printString = "Inventory got initialized with slots: "
-	
 	for slot in slots:
-		printString += "[Slot: " + slot.type + " ], "
+		printString += "[Slot: " + slot.slotType + " ], "
 	print(printString)
 
+
+func getSlots(slotType):
+	if (slotType == null):
+		return slots;
+		
+	var returnSlots = [];
+	for slot in slots:
+		if(slot.type == slotType):
+			returnSlots.append(slot)
+	return slots
+
+
+func addSlot(slotType):
+	var newSlot = Slot.new()
+	newSlot.slotType = slotType
+	slots.append(newSlot);
+
+
+func addEquipmentSlot(slot):
+	slots.append(slot);
+
+
+func getById(id):
+	if (id == null):
+		print ("ERROR: id is null!")
+
+	var returnSlot = null;
+	for slot in slots:
+		if(slot.id == id):
+			returnSlot = slot
+	return returnSlot;

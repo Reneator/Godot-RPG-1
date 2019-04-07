@@ -10,14 +10,29 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node",
-"class": "CharacterEquipmentSlot",
-"language": "GDScript",
-"path": "res://Prefabs/Item/CharacterEquipmentSlot.gd"
-}, {
-"base": "Node",
 "class": "CharacterInventory",
 "language": "GDScript",
 "path": "res://Prefabs/Item/CharacterInventory.gd"
+}, {
+"base": "Reference",
+"class": "DeathController",
+"language": "GDScript",
+"path": "res://Prefabs/Controllers/DeathController.gd"
+}, {
+"base": "ItemSlot",
+"class": "EquipmentSlot",
+"language": "GDScript",
+"path": "res://Prefabs/Item/EquipmentSlot.gd"
+}, {
+"base": "Reference",
+"class": "HitController",
+"language": "GDScript",
+"path": "res://Prefabs/Controllers/HitController.gd"
+}, {
+"base": "Node",
+"class": "Hitable",
+"language": "GDScript",
+"path": "res://Prefabs/Interfaces/Hitable.gd"
 }, {
 "base": "Node",
 "class": "Item",
@@ -28,12 +43,33 @@ _global_script_classes=[ {
 "class": "ItemGenerator",
 "language": "GDScript",
 "path": "res://Prefabs/Item/ItemGenerator.gd"
+}, {
+"base": "Node",
+"class": "ItemSlot",
+"language": "GDScript",
+"path": "res://Prefabs/Item/ItemSlot.gd"
+}, {
+"base": "Node",
+"class": "LootTable",
+"language": "GDScript",
+"path": "res://Prefabs/Experience/LootTable.gd"
+}, {
+"base": "Reference",
+"class": "RewardController",
+"language": "GDScript",
+"path": "res://Prefabs/Controllers/RewardController.gd"
 } ]
 _global_script_class_icons={
-"CharacterEquipmentSlot": "",
 "CharacterInventory": "",
+"DeathController": "",
+"EquipmentSlot": "",
+"HitController": "",
+"Hitable": "",
 "Item": "",
-"ItemGenerator": ""
+"ItemGenerator": "",
+"ItemSlot": "",
+"LootTable": "",
+"RewardController": ""
 }
 
 [application]
@@ -45,7 +81,9 @@ config/icon="res://icon.png"
 [autoload]
 
 global="*res://Scripts/global/global.gd"
-HealthController="*res://Scripts/global/controllers/HealthController.gd"
+HitController="*res://Prefabs/Controllers/HitController.gd"
+DeathiController="*res://Prefabs/Controllers/DeathController.gd"
+RewardController="*res://Prefabs/Controllers/RewardController.gd"
 
 [input]
 

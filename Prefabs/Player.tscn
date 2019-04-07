@@ -79,7 +79,7 @@ margin_bottom = -43.6849
 
 [node name="Inventory" parent="." instance=ExtResource( 11 )]
 
-[node name="CharacterEquipment" parent="." instance=ExtResource( 12 )]
+[node name="CharacterInventory" parent="." instance=ExtResource( 12 )]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="_on_hit" from="Hitable" to="SignalTriggeredText" method="change_text"]

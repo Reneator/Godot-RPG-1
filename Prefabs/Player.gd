@@ -63,7 +63,7 @@ func _input(event):
 			$sprite.play("Attack")
 			attacking = true
 			yield(get_tree().create_timer(1.0), "timeout")
-			print ("attacking stop")
+#			print ("attacking stop")
 			attacking = false
 	
 #func jump():

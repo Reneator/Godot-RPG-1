@@ -24,7 +24,7 @@ func _ready():
 
 func activate():
 	if(!attacking):
-		print("attacking")
+#		print("attacking")
 		attacking = true
 		
 		if (attack_delay):
@@ -45,10 +45,10 @@ func _on_AttackArea_body_entered(body):
 #	pass # Replace with function body.
 
 func attack(body):
-	if(body.is_in_group("hittable")):
-		print("attacking: "+ body.name)		
+	if(body.is_in_group("hitable")):
+#		print("attacking: "+ body.name)
 #		body.hit()
-		body.get_node("Hitable").hit(self)
+		body.get_node("Hitable").hit(get_parent().get_parent())
 		
 
 

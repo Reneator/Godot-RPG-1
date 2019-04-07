@@ -1,8 +1,15 @@
-extends RichTextLabel
+extends Node
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+
+var strength
+var dexterity
+var endurance
+var willpower
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,7 +18,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-func change_text(attacker, victim):
-	text = str(get_parent().find_node("Hitable").hp)
-#	text = str("hit! Attacker: "+ attacker.name + ", Victim: "+victim.name)

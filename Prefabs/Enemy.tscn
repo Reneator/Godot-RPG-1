@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Prefabs/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Enemies/Enemy sprites/barnacle.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Enemies/Enemy sprites/barnacle_bite.png" type="Texture" id=3]
 [ext_resource path="res://Prefabs/UI/SignalTriggeredText.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Prefabs/Interfaces/Hitable.tscn" type="PackedScene" id=5]
-
+[ext_resource path="res://Prefabs/Experience/LootTable.tscn" type="PackedScene" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -45,6 +45,8 @@ margin_bottom = -43.4114
 shape = SubResource( 3 )
 
 [node name="Hitable" parent="." instance=ExtResource( 5 )]
+
+[node name="LootTable" parent="." instance=ExtResource( 6 )]
 
 [connection signal="on_hit" from="." to="SignalTriggeredText" method="set_text"]
 [connection signal="on_hit" from="." to="SignalTriggeredText" method="change_text"]
