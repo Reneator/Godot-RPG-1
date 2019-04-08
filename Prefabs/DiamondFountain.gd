@@ -5,7 +5,7 @@ var timer = null
 var lastSpawn = null
 var duration = 5000
 
-signal _on_spawn
+signal _on_spawn (hp)
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -13,7 +13,10 @@ signal _on_spawn
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print (get_children())
-	timer = find_node("Timer")
+	var timer = Timer.new()
+	timer.wait_time = 1
+	timer.connect("timeout",self,"_on_Timer_timeout")
+#	timer = find_node("Timer")
 #	timer.start()
 	pass # Replace with function body.
 

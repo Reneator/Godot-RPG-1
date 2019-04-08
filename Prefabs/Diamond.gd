@@ -6,9 +6,11 @@ extends RigidBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Item.item_stack_id = 1
 	$Item.value = 100
-	$Item.item_name = "Diamond"
-	$Item.model = "res://Prefabs/Item/Models/ModelDiamond.tscn"
+	$Item.item_name = "DiamondRed"
+	$Item.model = "res://Prefabs/Item/Models/ModelDiamondRed.tscn"
+	$Item.stack_max_size = 10
 	pass # Replace with function body.
 	
 

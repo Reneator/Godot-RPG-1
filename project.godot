@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Prefabs/Item/CharacterInventory.gd"
 }, {
-"base": "Reference",
+"base": "Node",
 "class": "DeathController",
 "language": "GDScript",
 "path": "res://Prefabs/Controllers/DeathController.gd"
@@ -29,7 +29,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Game_Object.gd"
 }, {
-"base": "Reference",
+"base": "Node",
 "class": "HitController",
 "language": "GDScript",
 "path": "res://Prefabs/Controllers/HitController.gd"
@@ -59,7 +59,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Prefabs/Experience/LootTable.gd"
 }, {
-"base": "Reference",
+"base": "Node",
 "class": "RewardController",
 "language": "GDScript",
 "path": "res://Prefabs/Controllers/RewardController.gd"
@@ -86,9 +86,9 @@ config/icon="res://icon.png"
 
 [autoload]
 
-global="*res://Scripts/global/global.gd"
 HitController="*res://Prefabs/Controllers/HitController.gd"
-DeathiController="*res://Prefabs/Controllers/DeathController.gd"
+global="*res://Scripts/global/global.gd"
+DeathController="*res://Prefabs/Controllers/DeathController.gd"
 RewardController="*res://Prefabs/Controllers/RewardController.gd"
 
 [input]
@@ -106,6 +106,11 @@ ui_inventory={
 ui_inventory_eject={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_restart={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":82,"unicode":0,"echo":false,"script":null)
  ]
 }
 

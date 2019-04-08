@@ -6,6 +6,7 @@ var Slot = load("res://Prefabs/Item/EquipmentSlot.gd")
 
 
 func _ready():
+	get_parent().add_to_group("hasCharacterInventory")
 	
 	addSlot("WOW")
 	addSlot("HEAD")

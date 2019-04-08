@@ -1,4 +1,4 @@
-extends RichTextLabel
+extends Node
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -6,15 +6,14 @@ extends RichTextLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_parent().add_to_group("rewardable")
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 
-func change_text(attacker, victim):
-	text = str(get_parent().find_node("Hitable").hp)
-#	text = str("hit! Attacker: "+ attacker.name + ", Victim: "+victim.name)
-
-func change_text_simple(hp):
-	text = str(hp)
+func reward(victim):
+	print ("Reward Victim: " + victim.name)
+	if(get_parent().is_in_group("hasInventory")):
+		print ("Killer has Inventory")

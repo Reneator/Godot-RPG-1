@@ -8,6 +8,8 @@ signal _on_death(killer, victim)
 
 var invincible = false
 
+
+
 func _ready():
 	
 	self.connect("_on_hit", HitController, "_on_hit_resolve")

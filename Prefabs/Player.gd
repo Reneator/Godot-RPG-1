@@ -69,11 +69,14 @@ func _input(event):
 			attacking = false
 			
 		if event.is_action_pressed("ui_inventory") && not event.is_echo():
+			print(str(get_groups()))
 			openInventory()
 			
 		if event.is_action_pressed("ui_inventory_eject") && not event.is_echo():
 			dropItem()
-
+			
+		if event.is_action_pressed("ui_restart") && not event.is_echo():
+			get_tree().reload_current_scene()
 	
 #func jump():
 
@@ -130,7 +133,9 @@ func spawn_Diamond():
 	var item = Item.new()
 	item.value = 100
 	item.item_name = "Diamond"
-	item.model = "res://Prefabs/Item/Models/ModelDiamond.tscn"
+	item.model = "res://Prefabs/Item/Models/ModelDiamondGreen.tscn"
+	item.stack_max_size = 10
+	item.item_stack_id = 2
 	var itemGenerator = load("res://Prefabs/Item/ItemGenerator.gd").new()
 	var itemNode = itemGenerator.generateItemNode(item)
 	get_parent().get_node("DiamondFountain").call_deferred("add_child",itemNode)
@@ -138,7 +143,7 @@ func spawn_Diamond():
 	
 
 func openInventory():
-	$Inventory.print_items()
+	$Inventory.print_item_slots()
 	
 func dropItem():
 	var itemNode = $Inventory.return_and_remove_last_item_node()

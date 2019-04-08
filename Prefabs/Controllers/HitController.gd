@@ -1,4 +1,8 @@
+extends Node
 class_name HitController
+
+
+var blubb
 
 func _on_hit_resolve(attacker, victim):
 	
@@ -12,5 +16,3 @@ func _on_hit_resolve(attacker, victim):
 			victim.die(attacker)
 #			victim.emit_signal("_on_death", attacker, victim)
 	
-func signalConnect(emitter):
-	emitter.connect("_on_hit",self,"_on_hit_resolve")
