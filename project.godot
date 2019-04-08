@@ -15,6 +15,11 @@ _global_script_classes=[ {
 "path": "res://Prefabs/Item/CharacterInventory.gd"
 }, {
 "base": "Node",
+"class": "DamageController",
+"language": "GDScript",
+"path": "res://Prefabs/Controllers/DamageController.gd"
+}, {
+"base": "Node",
 "class": "DeathController",
 "language": "GDScript",
 "path": "res://Prefabs/Controllers/DeathController.gd"
@@ -66,6 +71,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "CharacterInventory": "",
+"DamageController": "",
 "DeathController": "",
 "EquipmentSlot": "",
 "Game_Object": "",
@@ -90,6 +96,7 @@ HitController="*res://Prefabs/Controllers/HitController.gd"
 global="*res://Scripts/global/global.gd"
 DeathController="*res://Prefabs/Controllers/DeathController.gd"
 RewardController="*res://Prefabs/Controllers/RewardController.gd"
+DamageController="*res://Prefabs/Controllers/DamageController.gd"
 
 [input]
 

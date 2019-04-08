@@ -18,3 +18,6 @@ func change_text(attacker, victim):
 
 func change_text_simple(hp):
 	text = str(hp)
+
+func _on_Hitable__on_hp_change(hp):
+	text = str(hp)

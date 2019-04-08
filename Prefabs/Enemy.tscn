@@ -52,4 +52,4 @@ shape = SubResource( 3 )
 [connection signal="on_hit" from="." to="SignalTriggeredText" method="change_text"]
 [connection signal="body_entered" from="DamageArea" to="." method="_on_DamageArea_body_entered"]
 [connection signal="_on_death" from="Hitable" to="." method="_on_Hitable__on_death"]
-[connection signal="_on_hit" from="Hitable" to="SignalTriggeredText" method="change_text_simple"]
+[connection signal="_on_hp_change" from="Hitable" to="SignalTriggeredText" method="_on_Hitable__on_hp_change"]

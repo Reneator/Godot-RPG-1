@@ -151,3 +151,6 @@ func dropItem():
 		return
 	itemNode.global_position = $sprite/ItemSpawnPoint.global_position
 	get_parent().get_parent().add_child(itemNode)
+#	var vector = itemNode.global_position - $sprite/ItemSpawnPoint.global_position
+#	itemNode.linear_velocity.x = vector.x*2000
+#	itemNode.linear_velocity.y = vector.y*2000
