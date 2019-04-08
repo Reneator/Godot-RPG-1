@@ -14,6 +14,7 @@ var _levelSteppings = [10,100,400,500,600];
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_parent().add_to_group("hasLevel")
 	pass # Replace with function body.
 
 func init(level, currentExp, levelSteppings):

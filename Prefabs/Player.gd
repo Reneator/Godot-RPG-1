@@ -132,7 +132,7 @@ func _on_Area2D_body_entered(body):
 func spawn_Diamond():
 	var item = Item.new()
 	item.value = 100
-	item.item_name = "Diamond"
+	item.item_name = "DiamondGreen"
 	item.model = "res://Prefabs/Item/Models/ModelDiamondGreen.tscn"
 	item.stack_max_size = 10
 	item.item_stack_id = 2

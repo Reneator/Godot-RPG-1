@@ -8,7 +8,7 @@ var strength
 var dexterity
 var endurance
 var willpower
-
+var statPoints
 
 
 # Called when the node enters the scene tree for the first time.
