@@ -20,6 +20,11 @@ _global_script_classes=[ {
 "path": "res://Prefabs/Controllers/DamageController.gd"
 }, {
 "base": "Node",
+"class": "DamageProcessor",
+"language": "GDScript",
+"path": "res://Prefabs/Controllers/Processors/DamageProcessor.gd"
+}, {
+"base": "Node",
 "class": "DeathController",
 "language": "GDScript",
 "path": "res://Prefabs/Controllers/DeathController.gd"
@@ -78,10 +83,16 @@ _global_script_classes=[ {
 "class": "RewardController",
 "language": "GDScript",
 "path": "res://Prefabs/Controllers/RewardController.gd"
+}, {
+"base": "Node",
+"class": "StatProcessor",
+"language": "GDScript",
+"path": "res://Prefabs/Controllers/Processors/StatProcessor.gd"
 } ]
 _global_script_class_icons={
 "CharacterInventory": "",
 "DamageController": "",
+"DamageProcessor": "",
 "DeathController": "",
 "Effect": "",
 "Enums": "",
@@ -93,7 +104,8 @@ _global_script_class_icons={
 "ItemGenerator": "",
 "ItemSlot": "",
 "LootTable": "",
-"RewardController": ""
+"RewardController": "",
+"StatProcessor": ""
 }
 
 [application]

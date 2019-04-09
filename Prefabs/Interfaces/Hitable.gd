@@ -9,7 +9,7 @@ signal _on_damage(attacker, victim)
 signal _on_hp_change(hp)
 
 var invincible = false
-
+var killable = true
 
 
 func _ready():
@@ -19,15 +19,15 @@ func _ready():
 	self.connect("_on_damage", DamageController, "_on_damage_resolve")
 	get_parent().add_to_group("hitable")
 
+
 func hit(other):
 	print (get_parent().name + " got hit by "+ other.name + " !")
 	emit_signal("_on_hit", other, self)
 	
-	
+
 func die(killer):
 	emit_signal("_on_death", killer, self)
-	
-#	get_parent().get_parent().remove_child(get_parent())
+
 
 func damage(attacker):
 	emit_signal("_on_damage", attacker, self)

@@ -2,53 +2,30 @@ extends Node
 
 
 var item_slots = []
-var size  = 20;
+var size  = 2;
 
 var ItemGenerator = load("res://Prefabs/Item/ItemGenerator.gd").new()
 var ItemSlot = load("res://Prefabs/Item/ItemSlot.gd")
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	get_parent().add_to_group("hasInventory")
-	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
-func add_item(item):
-	if (item_slots.size() >= size):
-		return false
-		
+func add_item(item):		
 	var itemSlot = find_item_slot_for_item(item)
+	
 	if(itemSlot == null):
+		if (item_slots.size() >= size):
+			return false
+			
 		itemSlot = add_item_slot()
 	
 	if(itemSlot == null):
 		return false
-	
 	itemSlot.add_item(item)
-#!!!!I need Itemslot to be able to stack Objects!!!!
-#	var itemSlot = ItemSlot.new()
-#	itemSlot.item = item
 	print("Item added: Name: " + item.item_name + " Value: " + str(item.value) + " added to Inventory!")
 	return true
-#	print(str(item_slots));
-
-func find_item_slot_for_item(item):
-	var foundItemSlot = null
-	for itemSlot in item_slots:
-		if(itemSlot.item.item_stack_id == item.item_stack_id):
-			foundItemSlot = itemSlot
-			if(foundItemSlot.stack_size >= item.stack_max_size):
-				foundItemSlot = null
-			else:
-				break
-	
-	return foundItemSlot
 
 
 func add_item_slot():
@@ -58,6 +35,7 @@ func add_item_slot():
 	var item_slot = ItemSlot.new()
 	item_slots.append(item_slot)
 	return item_slot
+
 
 func drop_item(id):
 	var item = get_item(id)
@@ -101,5 +79,18 @@ func print_item_slots():
 		printString += "item:" + item.item.item_name + " stacksize: "+ str(item.stack_size) + ", "
 	printString += "]"
 	print (printString)
+
+
+func find_item_slot_for_item(item):
+	var foundItemSlot = null
+	for itemSlot in item_slots:
+		if(itemSlot.item.item_stack_id == item.item_stack_id):
+			foundItemSlot = itemSlot
+			if(foundItemSlot.stack_size >= item.stack_max_size):
+				foundItemSlot = null
+			else:
+				break
+
+	return foundItemSlot
 	
 	
