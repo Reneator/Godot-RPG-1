@@ -24,6 +24,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Prefabs/Controllers/DeathController.gd"
 }, {
+"base": "Node",
+"class": "Effect",
+"language": "GDScript",
+"path": "res://Prefabs/Item/Effects/Effect.gd"
+}, {
+"base": "Node",
+"class": "Enums",
+"language": "GDScript",
+"path": "res://Scripts/global/Enums.gd"
+}, {
 "base": "ItemSlot",
 "class": "EquipmentSlot",
 "language": "GDScript",
@@ -73,6 +83,8 @@ _global_script_class_icons={
 "CharacterInventory": "",
 "DamageController": "",
 "DeathController": "",
+"Effect": "",
+"Enums": "",
 "EquipmentSlot": "",
 "Game_Object": "",
 "HitController": "",
@@ -97,6 +109,7 @@ global="*res://Scripts/global/global.gd"
 DeathController="*res://Prefabs/Controllers/DeathController.gd"
 RewardController="*res://Prefabs/Controllers/RewardController.gd"
 DamageController="*res://Prefabs/Controllers/DamageController.gd"
+Enums="*res://Scripts/global/Enums.gd"
 
 [input]
 

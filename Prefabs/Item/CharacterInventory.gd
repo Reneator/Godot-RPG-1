@@ -8,16 +8,16 @@ var Slot = load("res://Prefabs/Item/EquipmentSlot.gd")
 func _ready():
 	get_parent().add_to_group("hasCharacterInventory")
 	
-	addSlot("WOW")
-	addSlot("HEAD")
-	addSlot("SHOULDER")
+	addSlot(Enums.EQUIPMENT_SLOT_TYPE.WEAPON)
+	addSlot(Enums.EQUIPMENT_SLOT_TYPE.HEAD)
+	addSlot(Enums.EQUIPMENT_SLOT_TYPE.SHOULDER)
 	
 	printCharacterInventoryContent() 
 	
 func printCharacterInventoryContent():
 	var printString = "Inventory got initialized with slots: "
 	for slot in slots:
-		printString += "[Slot: " + slot.slotType + " ], "
+		printString += "[Slot: " + str(slot.slotType) + " ], "
 	print(printString)
 
 
