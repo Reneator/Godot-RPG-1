@@ -34,10 +34,25 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Prefabs/Item/Effects/Effect.gd"
 }, {
+"base": "Effect",
+"class": "EffectStatMultiplication",
+"language": "GDScript",
+"path": "res://Prefabs/Item/Effects/EffectStatMultiplication.gd"
+}, {
+"base": "EffectStatMultiplication",
+"class": "EffectStatMultiplicationMonsterType",
+"language": "GDScript",
+"path": "res://Prefabs/Item/Effects/EffectStatMultiplicationMonsterType.gd"
+}, {
 "base": "Node",
 "class": "Enums",
 "language": "GDScript",
 "path": "res://Scripts/global/Enums.gd"
+}, {
+"base": "Item",
+"class": "Equipment",
+"language": "GDScript",
+"path": "res://Prefabs/Item/Equipment.gd"
 }, {
 "base": "ItemSlot",
 "class": "EquipmentSlot",
@@ -80,6 +95,16 @@ _global_script_classes=[ {
 "path": "res://Prefabs/Experience/LootTable.gd"
 }, {
 "base": "Node",
+"class": "ProcessorEffects",
+"language": "GDScript",
+"path": "res://Prefabs/Controllers/Processors/ProcessorEffects.gd"
+}, {
+"base": "Node",
+"class": "ProcessorEquipment",
+"language": "GDScript",
+"path": "res://Prefabs/Controllers/Processors/ProcessorEquipment.gd"
+}, {
+"base": "Node",
 "class": "RewardController",
 "language": "GDScript",
 "path": "res://Prefabs/Controllers/RewardController.gd"
@@ -95,7 +120,10 @@ _global_script_class_icons={
 "DamageProcessor": "",
 "DeathController": "",
 "Effect": "",
+"EffectStatMultiplication": "",
+"EffectStatMultiplicationMonsterType": "",
 "Enums": "",
+"Equipment": "",
 "EquipmentSlot": "",
 "Game_Object": "",
 "HitController": "",
@@ -104,6 +132,8 @@ _global_script_class_icons={
 "ItemGenerator": "",
 "ItemSlot": "",
 "LootTable": "",
+"ProcessorEffects": "",
+"ProcessorEquipment": "",
 "RewardController": "",
 "StatProcessor": ""
 }
@@ -121,7 +151,6 @@ global="*res://Scripts/global/global.gd"
 DeathController="*res://Prefabs/Controllers/DeathController.gd"
 RewardController="*res://Prefabs/Controllers/RewardController.gd"
 DamageController="*res://Prefabs/Controllers/DamageController.gd"
-Enums="*res://Scripts/global/Enums.gd"
 
 [input]
 

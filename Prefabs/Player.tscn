@@ -1,10 +1,10 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Prefabs/Player.gd" type="Script" id=1]
 [ext_resource path="res://Prefabs/player/PlayerCollisionShape.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Characters/platformChar_walk1.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Characters/platformChar_walk2.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Characters/platformChar_idle.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Characters/platformChar_idle.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Characters/platformChar_walk1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Characters/platformChar_walk2.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Characters/platformChar_happy.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Characters/platformChar_jump.png" type="Texture" id=7]
 [ext_resource path="res://Prefabs/AttackArea.gd" type="Script" id=8]
@@ -13,19 +13,17 @@
 [ext_resource path="res://Prefabs/Item/Inventory.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Prefabs/Item/CharacterInventory.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Prefabs/Interfaces/Rewardable.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Prefabs/Hero/Character/HeroLevel.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Prefabs/Hero/Character/CharacterStats.tscn" type="PackedScene" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "Move",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "Move",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
@@ -88,10 +86,6 @@ margin_bottom = -43.6849
 [node name="CharacterInventory" parent="." instance=ExtResource( 12 )]
 
 [node name="Rewardable" parent="." instance=ExtResource( 13 )]
-
-[node name="HeroLevel" parent="." instance=ExtResource( 14 )]
-
-[node name="CharacterStats" parent="." instance=ExtResource( 15 )]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="_on_hp_change" from="Hitable" to="SignalTriggeredText" method="_on_Hitable__on_hp_change"]

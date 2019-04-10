@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var hp = 100;
-
+var monsterType = "Wolf"
 signal on_hit(string);
 
 # Declare member variables here. Examples:

@@ -48,7 +48,6 @@ position = Vector2( 548.823, 586.586 )
 current = true
 
 [node name="LevelStructur" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 548.823, 586.586 )
 
 [node name="TileMap" type="TileMap" parent="LevelStructur"]
@@ -83,7 +82,6 @@ texture = ExtResource( 7 )
 centered = false
 
 [node name="Test-Dialog" type="WindowDialog" parent="CanvasLayer"]
-visible = true
 margin_left = 177.866
 margin_top = 192.94
 margin_right = 225.866

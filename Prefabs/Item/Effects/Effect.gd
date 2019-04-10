@@ -1,15 +1,17 @@
 extends Node
 class_name Effect
 
-enum Blubb {UNIT_NEUTRAL, UNIT_ENEMY, UNIT_ALLY}
+var priority
+var stat_name
 
+
+func init(_stat_name):
+	stat_name = _stat_name
+	
 func _ready():
-	
-	var ha = Blubb.UNIT_NEUTRAL
 
-	
 	pass # Replace with function body.
 
 
-func processEffect(attacker, victim):
+func process_effect(attacker, victim, category, base_value):
 	pass

@@ -1,11 +1,8 @@
 extends Item
+class_name Equipment
 
-enum EquipmentSlot {HEAD, SHOULDER};
-#var
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
+var damage
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
