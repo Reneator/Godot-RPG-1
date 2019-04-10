@@ -15,3 +15,7 @@ var effects = []
 
 func _ready():
 	get_parent().add_to_group("Item")
+
+func get_effects_for_category(category):
+	
+	

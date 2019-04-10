@@ -3,14 +3,29 @@ class_name CharacterInventory
 
 var slots = [];
 var Slot = load("res://Prefabs/Item/EquipmentSlot.gd")
+var Item = load("res://Prefabs/Item/Equipment.gd")
+var MultiMonsterEffect = load("res://Prefabs/Item/Effects/EffectStatMultiplicationMonsterType.gd")
 
 
 func _ready():
 	get_parent().add_to_group("hasCharacterInventory")
+	var weapon_effect = MultiMonsterEffect.new()
+	weapon_effect.init("damage", "Wolf",2)
 	
-	addSlot(Enums.EQUIPMENT_SLOT_TYPE.WEAPON)
-	addSlot(Enums.EQUIPMENT_SLOT_TYPE.HEAD)
-	addSlot(Enums.EQUIPMENT_SLOT_TYPE.SHOULDER)
+	var weapon_item = Item.new()
+	weapon_item.effects.append(weapon_effect)
+	weapon_item.damage = 10
+	
+	var weapon_slot = Slot.new()
+	weapon_slot.item = weapon_item
+	
+	addSlot(weapon_slot)
+	
+	addSlotWithType(Enums.EQUIPMENT_SLOT_TYPE.WEAPON)
+	addSlotWithType(Enums.EQUIPMENT_SLOT_TYPE.HEAD)
+	addSlotWithType(Enums.EQUIPMENT_SLOT_TYPE.SHOULDER)
+	
+	
 	
 	printCharacterInventoryContent() 
 	
@@ -32,8 +47,10 @@ func getSlots(slotType):
 			returnSlots.append(slot)
 	return slots
 
+func addSlot(_slot):
+	slots.append(_slot)
 
-func addSlot(slotType):
+func addSlotWithType(slotType):
 	var newSlot = Slot.new()
 	newSlot.slotType = slotType
 	slots.append(newSlot);
@@ -52,3 +69,11 @@ func getById(id):
 		if(slot.id == id):
 			returnSlot = slot
 	return returnSlot;
+
+func get_items():
+	var items = []
+	for slot in slots:
+		if(slot.item != null):
+			items.append(slot.item)
+	
+	return items
