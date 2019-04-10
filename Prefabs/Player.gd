@@ -69,7 +69,7 @@ func _input(event):
 			attacking = false
 			
 		if event.is_action_pressed("ui_inventory") && not event.is_echo():
-			print(str(get_groups()))
+#			print(str(get_groups()))
 			openInventory()
 			
 		if event.is_action_pressed("ui_inventory_eject") && not event.is_echo():

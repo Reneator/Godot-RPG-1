@@ -7,6 +7,7 @@ var items = []
 
 func _ready():
 	get_parent().add_to_group("lootable")
+	items.append(ItemGenerator.get_item(0))
 	
 #	var item = ItemGenerator.generateItem(1)
 

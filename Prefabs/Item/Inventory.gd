@@ -27,6 +27,9 @@ func add_item(item):
 #	print("Item added: Name: " + item.name + " Value: " + str(item.value) + " added to Inventory!")
 	return true
 
+func add_items(items):
+	for item in items:
+		add_item(item)
 
 func add_item_slot():
 	if (item_slots.size() >= size):

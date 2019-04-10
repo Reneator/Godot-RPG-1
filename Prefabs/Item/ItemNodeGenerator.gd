@@ -29,7 +29,6 @@ func generateItemNode(item):
 	itemNode.item_name = item.item_name
 	itemNode.value = item.value
 	itemNode.model = item.model
-	itemNode.item_stack_id = item.item_stack_id
 	itemNode.stack_max_size = item.stack_max_size
 #	itemNode.get_node()
 	node.call_deferred("add_child",itemNode)

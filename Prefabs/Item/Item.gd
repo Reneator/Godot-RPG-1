@@ -4,6 +4,7 @@ class_name Item
 var id
 var value
 var item_name
+var icon
 var model
 var collectible: bool
 var stack_max_size
