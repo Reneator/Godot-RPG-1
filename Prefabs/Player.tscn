@@ -5,8 +5,8 @@
 [ext_resource path="res://Assets/Characters/platformChar_idle.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Characters/platformChar_walk1.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Characters/platformChar_walk2.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Characters/platformChar_happy.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Characters/platformChar_jump.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Characters/platformChar_jump.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Characters/platformChar_happy.png" type="Texture" id=7]
 [ext_resource path="res://Prefabs/AttackArea.gd" type="Script" id=8]
 [ext_resource path="res://Prefabs/UI/SignalTriggeredText.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Prefabs/Interfaces/Hitable.tscn" type="PackedScene" id=10]
@@ -29,12 +29,12 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "Attack",
+"name": "Jump",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "Jump",
+"name": "Attack",
 "speed": 5.0
 } ]
 

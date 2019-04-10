@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Items/platformPack_item010.png" type="Texture" id=1]
+
+[node name="Item" type="RigidBody2D"]
+gravity_scale = 10.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 0.4897, 14.871, -17.9129, -3.91904, -8.03362, -14.1858, 8.23816, -14.1858, 18.8923, -3.1442 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
