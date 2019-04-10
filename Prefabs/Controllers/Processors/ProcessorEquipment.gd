@@ -19,10 +19,12 @@ static func get_damage_value(attacker, victim):
 	for item in equipped_items_attacker:
 		damage += item.damage
 	
-	print("Damage from equipment: " + damage)
+	print("Damage from equipment: " + str(damage))
 	
 	var effects = []
 	for item in equipped_items_attacker:
-		effects.append(item.get_effects_for_category("damage"))
+		for item2 in item.get_effects_for_category("damage"):
+			effects.append(item2)
 	
 	damage = ProcessorEffects.process_effects(attacker, victim, "damage", damage, effects)
+	return damage

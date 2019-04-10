@@ -10,7 +10,7 @@ var MultiMonsterEffect = load("res://Prefabs/Item/Effects/EffectStatMultiplicati
 func _ready():
 	get_parent().add_to_group("hasCharacterInventory")
 	var weapon_effect = MultiMonsterEffect.new()
-	weapon_effect.init("damage", "Wolf",2)
+	weapon_effect.init_instance("damage", "Wolf",2)
 	
 	var weapon_item = Item.new()
 	weapon_item.effects.append(weapon_effect)

@@ -151,7 +151,6 @@ global="*res://Scripts/global/global.gd"
 DeathController="*res://Prefabs/Controllers/DeathController.gd"
 RewardController="*res://Prefabs/Controllers/RewardController.gd"
 DamageController="*res://Prefabs/Controllers/DamageController.gd"
-Enums="*res://Scripts/global/Enums.gd"
 
 [input]
 

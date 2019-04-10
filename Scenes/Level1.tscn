@@ -48,7 +48,6 @@ position = Vector2( 548.823, 586.586 )
 current = true
 
 [node name="LevelStructur" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 548.823, 586.586 )
 
 [node name="TileMap" type="TileMap" parent="LevelStructur"]
