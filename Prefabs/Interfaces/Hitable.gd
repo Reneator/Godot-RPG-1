@@ -14,9 +14,9 @@ var killable = true
 
 func _ready():
 	
-	self.connect("_on_hit", HitController, "_on_hit_resolve")
-	self.connect("_on_death", DeathController, "_on_death_resolve")
-	self.connect("_on_damage", DamageController, "_on_damage_resolve")
+	self.connect("_on_hit", ControllerHit, "_on_hit_resolve")
+	self.connect("_on_death", ControllerDeath, "_on_death_resolve")
+	self.connect("_on_damage", ControllerDamage, "_on_damage_resolve")
 	get_parent().add_to_group("hitable")
 
 

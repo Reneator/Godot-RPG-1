@@ -1,13 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tiles/platformPack_tile001.png" type="Texture" id=2]
-[ext_resource path="res://Prefabs/Diamond.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Prefabs/DiamondFountain.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Prefabs/Enemy.tscn" type="PackedScene" id=5]
-[ext_resource path="res://GUI.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Backgrounds/backgroundColorForest.png" type="Texture" id=7]
-[ext_resource path="res://Scenes/Test-Dialog.gd" type="Script" id=8]
+[ext_resource path="res://Prefabs/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Backgrounds/backgroundColorForest.png" type="Texture" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 65, 0, 65, 63, 0, 63 )
@@ -55,48 +51,19 @@ tile_set = SubResource( 3 )
 format = 1
 tile_data = PoolIntArray( -196602, 0, 0, -196601, 0, 0, -131066, 1, 0, -131065, 1, 0, -65530, 1, 0, -65529, 1, 0, 6, 1, 0, 7, 1, 0, 65542, 1, 0, 65543, 1, 0, 65577, 0, 0, 65578, 0, 0, 65579, 0, 0, 65580, 0, 0, 65581, 0, 0, 65582, 0, 0, 65583, 0, 0, 65584, 0, 0, 65585, 0, 0, 65586, 0, 0, 65587, 0, 0, 65588, 0, 0, 65589, 0, 0, 196583, 0, 0, 196584, 0, 0, 196585, 0, 0, 196586, 0, 0, 196587, 0, 0, 196588, 0, 0, 196589, 0, 0, 196590, 0, 0, 196591, 0, 0, 196592, 0, 0, 196593, 0, 0, 196594, 0, 0, 196595, 0, 0, 196596, 0, 0, 196597, 0, 0, 196598, 0, 0, 196599, 0, 0, 196600, 0, 0, 196601, 0, 0, 196602, 0, 0, 196603, 0, 0, 196604, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 131088, 0, 0, 131089, 0, 0, 131090, 0, 0, 131091, 0, 0, 131092, 0, 0, 131093, 0, 0, 131094, 0, 0, 131095, 0, 0, 131096, 0, 0, 131097, 0, 0, 131098, 0, 0, 131099, 0, 0, 131100, 0, 0, 131101, 0, 0, 131102, 0, 0, 131103, 0, 0, 131104, 0, 0, 131105, 0, 0, 131106, 0, 0, 131107, 0, 0, 131108, 0, 0, 131109, 0, 0, 131110, 0, 0, 131111, 0, 0, 131112, 0, 0, 131113, 0, 0, 131114, 0, 0, 131115, 0, 0, 131116, 0, 0, 131117, 0, 0, 131118, 0, 0, 131119, 0, 0, 131120, 0, 0, 131121, 0, 0, 131122, 0, 0, 131123, 0, 0, 131124, 0, 0, 131125, 0, 0, 131126, 0, 0, 131127, 0, 0, 131128, 0, 0, 131129, 0, 0, 131130, 0, 0 )
 
-[node name="Diamond" parent="." instance=ExtResource( 3 )]
-position = Vector2( 650.492, 628.113 )
-mass = 1.0
-gravity_scale = 9.8
-
-[node name="DiamondFountain" parent="." instance=ExtResource( 4 )]
-position = Vector2( 776.507, 519.283 )
-
-[node name="Enemy" parent="." instance=ExtResource( 5 )]
+[node name="Enemy" parent="." instance=ExtResource( 3 )]
 position = Vector2( 767.543, 684.962 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="GUI" parent="CanvasLayer" instance=ExtResource( 6 )]
-margin_bottom = 80.0
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+editor/display_folded = true
 scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
 motion_mirroring = Vector2( 1024, 0 )
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
-texture = ExtResource( 7 )
+texture = ExtResource( 4 )
 centered = false
-
-[node name="Test-Dialog" type="WindowDialog" parent="CanvasLayer"]
-margin_left = 177.866
-margin_top = 192.94
-margin_right = 225.866
-margin_bottom = 232.94
-hint_tooltip = "Fuuuuuuuuuuuuck
-"
-script = ExtResource( 8 )
-
-[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Test-Dialog"]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="Label" type="Label" parent="CanvasLayer/Test-Dialog/NinePatchRect"]
-margin_right = 78.0
-margin_bottom = 14.0
-text = "Fucking Hell"
-align = 1
 

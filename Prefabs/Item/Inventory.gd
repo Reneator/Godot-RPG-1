@@ -2,9 +2,9 @@ extends Node
 
 
 var item_slots = []
-var size  = 2;
+var size  = 20;
 
-var ItemGenerator = load("res://Prefabs/Item/ItemGenerator.gd").new()
+var ItemNodeGenerator = load("res://Prefabs/Item/ItemNodeGenerator.gd").new()
 var ItemSlot = load("res://Prefabs/Item/ItemSlot.gd")
 
 
@@ -24,7 +24,7 @@ func add_item(item):
 	if(itemSlot == null):
 		return false
 	itemSlot.add_item(item)
-	print("Item added: Name: " + item.item_name + " Value: " + str(item.value) + " added to Inventory!")
+#	print("Item added: Name: " + item.name + " Value: " + str(item.value) + " added to Inventory!")
 	return true
 
 
@@ -40,7 +40,7 @@ func add_item_slot():
 func drop_item(id):
 	var item = get_item(id)
 	item_slots.erase(item)
-	return ItemGenerator.generateItemNode(item)
+	return ItemNodeGenerator.generateItemNode(item)
 	
 	
 func remove_item(item):
@@ -50,7 +50,7 @@ func remove_item(item):
 func return_and_remove_item_node(id):
 	var item = get_item(id)
 	item_slots.erase(item)
-	return ItemGenerator.generateItemNode(item)
+	return ItemNodeGenerator.generateItemNode(item)
 	
 	
 func return_and_remove_last_item_node():
@@ -63,7 +63,7 @@ func return_and_remove_last_item_node():
 	else:
 		itemSlot.decrease_stack_size(1)
 		
-	return ItemGenerator.generateItemNode(item)
+	return ItemNodeGenerator.generateItemNode(item)
 
 
 func get_item(id):
@@ -84,7 +84,7 @@ func print_item_slots():
 func find_item_slot_for_item(item):
 	var foundItemSlot = null
 	for itemSlot in item_slots:
-		if(itemSlot.item.item_stack_id == item.item_stack_id):
+		if(itemSlot.item.id == item.id):
 			foundItemSlot = itemSlot
 			if(foundItemSlot.stack_size >= item.stack_max_size):
 				foundItemSlot = null

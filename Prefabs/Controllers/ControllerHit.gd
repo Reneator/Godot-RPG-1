@@ -1,5 +1,5 @@
 extends Node
-class_name HitController
+class_name ControllerHit
 
 
 var blubb

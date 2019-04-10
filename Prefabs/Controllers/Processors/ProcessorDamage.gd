@@ -1,7 +1,7 @@
 extends Node
-class_name DamageProcessor
+class_name ProcessorDamage
 
-var StatProcessor = load("res://Prefabs/Controllers/Processors/StatProcessor.gd")
+var ProcessorStats = load("res://Prefabs/Controllers/Processors/ProcessorStats.gd")
 var ProcessorEquipment = load("res://Prefabs/Controllers/Processors/ProcessorEquipment.gd")
 
 
@@ -13,7 +13,7 @@ static func process_damage(attacker, victim):
 	var attackerNode = attacker.get_parent()
 	var damage = ProcessorEquipment.get_damage_value(attacker, victim)
 	
-	var strength = StatProcessor.get_value_for_stat(attacker, victim, "strength")
+	var strength = ProcessorStats.get_value_for_stat(attacker, victim, "strength")
 	damage += strength
 	
 	return damage

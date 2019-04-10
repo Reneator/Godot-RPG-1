@@ -1,40 +1,30 @@
 extends Node
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-const itemImages = [
-	preload("res://images/Ac_Ring05.png"),
-	preload("res://images/A_Armor05.png"),
-	preload("res://images/A_Armour02.png"),
-	preload("res://images/A_Shoes03.png"),
-	preload("res://images/C_Elm03.png"),
-	preload("res://images/E_Wood02.png"),
-	preload("res://images/P_Red02.png"),
-	preload("res://images/W_Sword001.png")
-];
-
+var Item = load("res://Prefabs/Item/Item.gd")
 
 const itemDictionary = {
+		
 	0: {
-		"itemName": "Ring",
-		"itemValue": 456,
-		"itemIcon": itemImages[0]
-	},
-	1: {
-		"itemName": "Sword",
-		"itemValue": 100,
-		"itemIcon": itemImages[7]
-	},
-	2: {
-		"itemName": "Iron Ring",
-		"itemValue": 987,
-		"itemIcon": itemImages[0]
-	},
-};
+		name =  "DiamondGreen",
+		value =  100,
+		model =  "res://Prefabs/Item/Models/ModelDiamondGreen.tscn",
+		icon =  "res://Assets/Items/platformPack_Item009.png",
+		stack_max_size =  10
+	}
+}
 
-
+func get_item(id):
+	var itemDefinition = itemDictionary[id]
+	if(itemDefinition == null):
+		return null
+	
+	var item = Item.new()
+	item.item_name = itemDefinition.name
+	item.value = itemDefinition.value
+	item.model = itemDefinition.model
+	item.icon = itemDefinition.icon
+	item.stack_max_size = itemDefinition.stack_max_size
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

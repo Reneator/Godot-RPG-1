@@ -15,19 +15,24 @@ _global_script_classes=[ {
 "path": "res://Prefabs/Item/CharacterInventory.gd"
 }, {
 "base": "Node",
-"class": "DamageController",
+"class": "ControllerDamage",
 "language": "GDScript",
-"path": "res://Prefabs/Controllers/DamageController.gd"
+"path": "res://Prefabs/Controllers/ControllerDamage.gd"
 }, {
 "base": "Node",
-"class": "DamageProcessor",
+"class": "ControllerDeath",
 "language": "GDScript",
-"path": "res://Prefabs/Controllers/Processors/DamageProcessor.gd"
+"path": "res://Prefabs/Controllers/ControllerDeath.gd"
 }, {
 "base": "Node",
-"class": "DeathController",
+"class": "ControllerHit",
 "language": "GDScript",
-"path": "res://Prefabs/Controllers/DeathController.gd"
+"path": "res://Prefabs/Controllers/ControllerHit.gd"
+}, {
+"base": "Node",
+"class": "ControllerReward",
+"language": "GDScript",
+"path": "res://Prefabs/Controllers/ControllerReward.gd"
 }, {
 "base": "Node",
 "class": "Effect",
@@ -65,11 +70,6 @@ _global_script_classes=[ {
 "path": "res://Scripts/Game_Object.gd"
 }, {
 "base": "Node",
-"class": "HitController",
-"language": "GDScript",
-"path": "res://Prefabs/Controllers/HitController.gd"
-}, {
-"base": "Node",
 "class": "Hitable",
 "language": "GDScript",
 "path": "res://Prefabs/Interfaces/Hitable.gd"
@@ -80,9 +80,9 @@ _global_script_classes=[ {
 "path": "res://Prefabs/Item/Item.gd"
 }, {
 "base": "Node",
-"class": "ItemGenerator",
+"class": "ItemNodeGenerator",
 "language": "GDScript",
-"path": "res://Prefabs/Item/ItemGenerator.gd"
+"path": "res://Prefabs/Item/ItemNodeGenerator.gd"
 }, {
 "base": "Node",
 "class": "ItemSlot",
@@ -95,6 +95,11 @@ _global_script_classes=[ {
 "path": "res://Prefabs/Experience/LootTable.gd"
 }, {
 "base": "Node",
+"class": "ProcessorDamage",
+"language": "GDScript",
+"path": "res://Prefabs/Controllers/Processors/ProcessorDamage.gd"
+}, {
+"base": "Node",
 "class": "ProcessorEffects",
 "language": "GDScript",
 "path": "res://Prefabs/Controllers/Processors/ProcessorEffects.gd"
@@ -105,20 +110,16 @@ _global_script_classes=[ {
 "path": "res://Prefabs/Controllers/Processors/ProcessorEquipment.gd"
 }, {
 "base": "Node",
-"class": "RewardController",
+"class": "ProcessorStats",
 "language": "GDScript",
-"path": "res://Prefabs/Controllers/RewardController.gd"
-}, {
-"base": "Node",
-"class": "StatProcessor",
-"language": "GDScript",
-"path": "res://Prefabs/Controllers/Processors/StatProcessor.gd"
+"path": "res://Prefabs/Controllers/Processors/ProcessorStats.gd"
 } ]
 _global_script_class_icons={
 "CharacterInventory": "",
-"DamageController": "",
-"DamageProcessor": "",
-"DeathController": "",
+"ControllerDamage": "",
+"ControllerDeath": "",
+"ControllerHit": "",
+"ControllerReward": "",
 "Effect": "",
 "EffectStatMultiplication": "",
 "EffectStatMultiplicationMonsterType": "",
@@ -126,16 +127,15 @@ _global_script_class_icons={
 "Equipment": "",
 "EquipmentSlot": "",
 "Game_Object": "",
-"HitController": "",
 "Hitable": "",
 "Item": "",
-"ItemGenerator": "",
+"ItemNodeGenerator": "",
 "ItemSlot": "",
 "LootTable": "",
+"ProcessorDamage": "",
 "ProcessorEffects": "",
 "ProcessorEquipment": "",
-"RewardController": "",
-"StatProcessor": ""
+"ProcessorStats": ""
 }
 
 [application]
@@ -146,11 +146,11 @@ config/icon="res://icon.png"
 
 [autoload]
 
-HitController="*res://Prefabs/Controllers/HitController.gd"
 global="*res://Scripts/global/global.gd"
-DeathController="*res://Prefabs/Controllers/DeathController.gd"
-RewardController="*res://Prefabs/Controllers/RewardController.gd"
-DamageController="*res://Prefabs/Controllers/DamageController.gd"
+ControllerDamage="*res://Prefabs/Controllers/ControllerDamage.gd"
+ControllerDeath="*res://Prefabs/Controllers/ControllerDeath.gd"
+ControllerHit="*res://Prefabs/Controllers/ControllerHit.gd"
+ControllerReward="*res://Prefabs/Controllers/ControllerReward.gd"
 
 [input]
 

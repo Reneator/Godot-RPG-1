@@ -60,7 +60,7 @@ func _physics_process(delta):
 
 func _input(event):
 		if event.is_action_pressed("ui_attack") && not event.is_echo():
-			spawn_Diamond()
+#			spawn_Diamond()
 			$sprite/AttackArea.activate()
 			$sprite.play("Attack")
 			attacking = true
@@ -135,8 +135,8 @@ func spawn_Diamond():
 	item.item_name = "DiamondGreen"
 	item.model = "res://Prefabs/Item/Models/ModelDiamondGreen.tscn"
 	item.stack_max_size = 10
-	item.item_stack_id = 2
-	var itemGenerator = load("res://Prefabs/Item/ItemGenerator.gd").new()
+	item.id = 2
+	var itemGenerator = load("res://Prefabs/Item/ItemNodeGenerator.gd").new()
 	var itemNode = itemGenerator.generateItemNode(item)
 	get_parent().get_node("DiamondFountain").call_deferred("add_child",itemNode)
 #	get_tree().current_scene().get_node("DiamondFountain").add_child(itemNode)

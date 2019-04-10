@@ -12,19 +12,20 @@ func _ready():
 
 
 static func get_damage_value(attacker, victim):
-	var equipped_items_attacker = attacker.get_node("CharacterInventory").get_items()
-	var damage = 0
-	print (str(equipped_items_attacker))
-		
-	for item in equipped_items_attacker:
-		damage += item.damage
+	var damage = 40
+
+	if(attacker.is_in_group("hasCharacterInventory")):
+		var equipped_items_attacker = attacker.get_node("CharacterInventory").get_items()
+		print (str(equipped_items_attacker))
+		for item in equipped_items_attacker:
+			damage += item.damage
 	
-	print("Damage from equipment: " + str(damage))
+		print("Damage from equipment: " + str(damage))
 	
-	var effects = []
-	for item in equipped_items_attacker:
-		for item2 in item.get_effects_for_category("damage"):
-			effects.append(item2)
+		var effects = []
+		for item in equipped_items_attacker:
+			for item2 in item.get_effects_for_category("damage"):
+				effects.append(item2)
 	
-	damage = ProcessorEffects.process_effects(attacker, victim, "damage", damage, effects)
+		damage = ProcessorEffects.process_effects(attacker, victim, "damage", damage, effects)
 	return damage

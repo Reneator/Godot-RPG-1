@@ -1,11 +1,11 @@
 extends Node
-class_name DamageController
+class_name ControllerDamage
 
-var DamageProcessor = load("res://Prefabs/Controllers/Processors/DamageProcessor.gd")
+var ProcessorDamage = load("res://Prefabs/Controllers/Processors/ProcessorDamage.gd")
 
 func _on_damage_resolve(attacker, victim):
-#	print ("DamageController resolved the damaging")
-	var damage = DamageProcessor.process_damage(attacker, victim)
+#	print ("ControllerDamage resolved the damaging")
+	var damage = ProcessorDamage.process_damage(attacker, victim)
 #	print ("Damage Calculated is " + str(damage))
 	#Calculate Damage
 	victim.set_hp(victim.hp - damage)

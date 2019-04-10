@@ -1,5 +1,5 @@
 extends Node
-class_name StatProcessor
+class_name ProcessorStats
 
 func _ready():
 	pass # Replace with function body.

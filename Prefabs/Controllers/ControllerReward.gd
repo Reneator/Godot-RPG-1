@@ -1,9 +1,9 @@
 extends Node
-class_name RewardController
+class_name ControllerReward
 
 
 func _on_reward_resolve(rewardee, victim):
-	print ("RewardController: " + rewardee.name + " got rewarded by " + victim.name)
+	print ("ControllerReward: " + rewardee.name + " got rewarded by " + victim.name)
 	
 #	print ("Reward Victim: " + victim.name)
 	if(rewardee.get_parent().is_in_group("hasInventory")):
