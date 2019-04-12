@@ -9,6 +9,7 @@ const itemDictionary = {
 		value =  100,
 		item_type = Enums.ITEM_TYPE.ITEM,
 		model =  "res://Prefabs/Item/Models/ModelDiamondGreen.tscn",
+		sprite = null,		
 		icon =  "res://Assets/Items/platformPack_Item009.png",
 		stack_max_size =  10
 	},
@@ -17,6 +18,7 @@ const itemDictionary = {
 		value =  100,
 		item_type = Enums.ITEM_TYPE.ITEM,
 		model =  "res://Prefabs/Item/Models/ModelDiamondRed.tscn",
+		sprite = null,
 		icon =  "res://Assets/Items/platformPack_Item010.png",
 		stack_max_size =  10
 	},
@@ -24,8 +26,9 @@ const itemDictionary = {
 		name =  "Sword",
 		value =  100,
 		item_type = Enums.ITEM_TYPE.EQUIPMENT,
-		model =  "res://Prefabs/Item/Models/ModelDiamondRed.tscn",
-		icon =  "res://Assets/Items/platformPack_Item010.png",
+		model =  "res://Prefabs/Item/Models/ModelTemplate.tscn",
+		sprite = "res://Assets/selfmade/hero1_40px.png",
+		icon =  "res://Assets/selfmade/hero1_40px.png",
 		stack_max_size =  1,
 		effects = []
 		#TODO: Generation of items
@@ -35,6 +38,7 @@ const itemDictionary = {
 		value =  100,
 		item_type = Enums.ITEM_TYPE.EQUIPMENT,
 		model =  "res://Prefabs/Item/Models/ModelDiamondRed.tscn",
+		sprite = null,	
 		icon =  "res://Assets/Items/platformPack_Item010.png",
 		stack_max_size =  1,
 		effects = []
@@ -54,6 +58,8 @@ static func get_item(id):
 	item.model = itemDefinition.model
 	item.icon = itemDefinition.icon
 	item.stack_max_size = itemDefinition.stack_max_size
+	if(itemDefinition.sprite):
+		item.sprite = itemDefinition.sprite
 	return item
 	
 # Called when the node enters the scene tree for the first time.

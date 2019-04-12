@@ -8,6 +8,7 @@ var icon
 var model
 var collectible: bool
 var stack_max_size
+var sprite: String
 
 #Effects
 var effects = []

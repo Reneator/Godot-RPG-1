@@ -18,9 +18,14 @@ func generateItem(itemValue, itemName, model):
 #	newItem.get_child("Sprite").Texture =
 #	newItem.setSprite = preload()
 
-func generateItemNode(item):
-	var node = load(item.model).instance()
+func generateItemNode(item: Item):
+	var node: RigidBody2D = load(item.model).instance()
 	
+#	debug_test_replicating()
+	
+	if (item.sprite !=null):
+		var spriteNode : Sprite = node.get_node("Sprite")
+		spriteNode.texture = load(item.sprite)
 	var collectableI = collectableScene.instance()
 	node.call_deferred("add_child",collectableI)
 	
@@ -33,6 +38,23 @@ func generateItemNode(item):
 #	itemNode.get_node()
 	node.call_deferred("add_child",itemNode)
 	return node
+	
+	
+func debug_test_replicating():
+	var debug_object = DebugObject.new()
+	if(debug_object!=null):
+		
+		var debug_var_i_want_to_inspect  = debug_object.blubb
+		print (str(debug_var_i_want_to_inspect))
+		
+		var debug_child_node_i_want_to_inspect = get_node("CharacterStats")
+		print (str(debug_child_node_i_want_to_inspect))
+	
+	
+class DebugObject:
+	var blubb = 5
+	var nullObject = null
+		
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
