@@ -7,6 +7,7 @@ signal on_hit(string);
 func _ready():
 	$SignalTriggeredText.set_text("Enemy Hp!")
 	$AnimatedSprite.playing = true
+	self.add_to_group("enemy")
 	pass # Replace with function body.
 
 

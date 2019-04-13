@@ -9,7 +9,7 @@ const itemDictionary = {
 		value =  100,
 		item_type = Enums.ITEM_TYPE.ITEM,
 		model =  "res://Prefabs/Item/Models/ModelDiamondGreen.tscn",
-		sprite = null,		
+		sprite = null,
 		icon =  "res://Assets/Items/platformPack_Item009.png",
 		stack_max_size =  10
 	},
@@ -30,19 +30,20 @@ const itemDictionary = {
 		sprite = "res://Assets/selfmade/hero1_40px.png",
 		icon =  "res://Assets/selfmade/hero1_40px.png",
 		stack_max_size =  1,
-		effects = []
-		#TODO: Generation of items
+		equipment_stats = {
+			effects = [],
+			
+		}
 	},
 	3 : {
 		name =  "Helmet",
 		value =  100,
 		item_type = Enums.ITEM_TYPE.EQUIPMENT,
 		model =  "res://Prefabs/Item/Models/ModelDiamondRed.tscn",
-		sprite = null,	
+		sprite = null,
 		icon =  "res://Assets/Items/platformPack_Item010.png",
 		stack_max_size =  1,
 		effects = []
-		#TODO: Generation of items
 	},
 }
 
@@ -57,7 +58,11 @@ static func get_item(id):
 	item.value = itemDefinition.value
 	item.model = itemDefinition.model
 	item.icon = itemDefinition.icon
-	item.stack_max_size = itemDefinition.stack_max_size
+	if(itemDefinition.stack_max_size):
+		item.stack_max_size = itemDefinition.stack_max_size
+	else:
+		item.stack_max_size = 1
+		
 	if(itemDefinition.sprite):
 		item.sprite = itemDefinition.sprite
 	return item

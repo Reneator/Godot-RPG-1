@@ -16,6 +16,7 @@ var Item = load("res://Prefabs/Item/Item.gd")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	self.add_to_group("player")
 	pass # Replace with function body.
 	
 

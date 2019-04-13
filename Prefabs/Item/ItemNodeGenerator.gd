@@ -41,21 +41,6 @@ func generateItemNode(item: Item):
 	return node
 	
 	
-func debug_test_replicating():
-	var debug_object = DebugObject.new()
-	if(debug_object!=null):
-		
-		var debug_var_i_want_to_inspect  = debug_object.blubb
-		print (str(debug_var_i_want_to_inspect))
-		
-		var debug_child_node_i_want_to_inspect = get_node("CharacterStats")
-		print (str(debug_child_node_i_want_to_inspect))
-	
-	
-class DebugObject:
-	var blubb = 5
-	var nullObject = null
-		
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

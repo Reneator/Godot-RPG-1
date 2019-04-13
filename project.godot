@@ -152,6 +152,7 @@ ControllerDeath="*res://Prefabs/Controllers/ControllerDeath.gd"
 ControllerHit="*res://Prefabs/Controllers/ControllerHit.gd"
 ControllerReward="*res://Prefabs/Controllers/ControllerReward.gd"
 ItemGenerator="*res://Prefabs/Item/ItemGenerator.gd"
+ControllerStatistics="*res://Prefabs/Controllers/ControllerStatistics.gd"
 
 [input]
 

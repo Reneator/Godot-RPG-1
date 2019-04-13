@@ -3,7 +3,6 @@
 [ext_resource path="res://Prefabs/DiamondFountain.gd" type="Script" id=1]
 [ext_resource path="res://Prefabs/UI/SignalTriggeredText.tscn" type="PackedScene" id=2]
 
-
 [node name="DiamondFountain" type="Node2D"]
 script = ExtResource( 1 )
 

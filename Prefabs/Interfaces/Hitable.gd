@@ -21,8 +21,10 @@ func _ready():
 
 
 func hit(other):
-	print (get_parent().name + " got hit by "+ other.name + " !")
-	emit_signal("_on_hit", other, self)
+	if(get_parent().is_in_group("enemy") && other.is_in_group("player") || 
+	get_parent().is_in_group("player") && other.is_in_group("enemy")):
+		print (get_parent().name + " got hit by "+ other.name + " !")
+		emit_signal("_on_hit", other, self)
 	
 
 func die(killer):
