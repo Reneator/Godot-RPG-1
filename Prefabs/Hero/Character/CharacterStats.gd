@@ -17,16 +17,16 @@ var stats = {
 
 func _ready():
 	get_parent().add_to_group("hasCharacterStats")
-	print (str(stats))
+#	print (str(stats))
 	add_value("strength", 10)
-	print ("Current Value"+ str(get_current_value("strength")))
+#	print ("Current Value"+ str(get_current_value("strength")))
 	pass # Replace with function body.
 
 
 func add_value(statName, value):
-	print (str(stats[statName]))
+#	print (str(stats[statName]))
 	stats[statName].allocatedPoints+=value
-	print (str(stats[statName]))	
+#	print (str(stats[statName]))	
 	
 func get_current_value(statName):
 	return stats[statName].allocatedPoints + stats[statName].baseValue

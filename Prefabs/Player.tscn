@@ -2,9 +2,9 @@
 
 [ext_resource path="res://Prefabs/Player.gd" type="Script" id=1]
 [ext_resource path="res://Prefabs/player/PlayerCollisionShape.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Characters/platformChar_idle.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Characters/platformChar_walk1.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Characters/platformChar_walk2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Characters/platformChar_walk1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Characters/platformChar_walk2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Characters/platformChar_idle.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Characters/platformChar_jump.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Characters/platformChar_happy.png" type="Texture" id=7]
 [ext_resource path="res://Prefabs/AttackArea.gd" type="Script" id=8]
@@ -17,14 +17,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "Move",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Idle",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
@@ -68,11 +68,6 @@ polygon = PoolVector2Array( 35.6272, -4.95718, 81.2796, -31.8388, 99.5869, 5.471
 position = Vector2( 0, 15 )
 
 [node name="CollisionShape2D" parent="Area2D" instance=ExtResource( 2 )]
-
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-
-[node name="CollisionShape2D2" parent="RigidBody2D" instance=ExtResource( 2 )]
-position = Vector2( 0, 15 )
 
 [node name="SignalTriggeredText" parent="." instance=ExtResource( 9 )]
 margin_left = -37.6143

@@ -23,7 +23,8 @@ func generateItemNode(item: Item):
 	
 #	debug_test_replicating()
 	
-	if (item.sprite !=null):
+	print ("Generate Item: "+str(item))
+	if (item.sprite !=null && !item.sprite.empty()):
 		var spriteNode : Sprite = node.get_node("Sprite")
 		spriteNode.texture = load(item.sprite)
 	var collectableI = collectableScene.instance()
