@@ -1,7 +1,7 @@
 extends Node
 class_name ProcessorEquipment
 
-var ProcessorEffects = load("res://Prefabs/Controllers/Processors/ProcessorEffects.gd")
+const ProcessorEffects = preload("res://Prefabs/Controllers/Processors/ProcessorEffects.gd")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"

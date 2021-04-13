@@ -1,5 +1,4 @@
 extends Node
-class_name ControllerDamage
 
 var ProcessorDamage = load("res://Prefabs/Controllers/Processors/ProcessorDamage.gd")
 

@@ -15,26 +15,6 @@ _global_script_classes=[ {
 "path": "res://Prefabs/Item/CharacterInventory.gd"
 }, {
 "base": "Node",
-"class": "ControllerDamage",
-"language": "GDScript",
-"path": "res://Prefabs/Controllers/ControllerDamage.gd"
-}, {
-"base": "Node",
-"class": "ControllerDeath",
-"language": "GDScript",
-"path": "res://Prefabs/Controllers/ControllerDeath.gd"
-}, {
-"base": "Node",
-"class": "ControllerHit",
-"language": "GDScript",
-"path": "res://Prefabs/Controllers/ControllerHit.gd"
-}, {
-"base": "Node",
-"class": "ControllerReward",
-"language": "GDScript",
-"path": "res://Prefabs/Controllers/ControllerReward.gd"
-}, {
-"base": "Node",
 "class": "Effect",
 "language": "GDScript",
 "path": "res://Prefabs/Item/Effects/Effect.gd"
@@ -116,10 +96,6 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "CharacterInventory": "",
-"ControllerDamage": "",
-"ControllerDeath": "",
-"ControllerHit": "",
-"ControllerReward": "",
 "Effect": "",
 "EffectStatMultiplication": "",
 "EffectStatMultiplicationMonsterType": "",

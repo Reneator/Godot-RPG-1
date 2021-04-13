@@ -2,7 +2,7 @@ extends RigidBody2D
 
 
 func _ready():
-	$Item.item_stack_id = 1
+#	$Item.item_stack_id = 1
 	$Item.value = 100
 	$Item.item_name = "DiamondRed"
 	$Item.model = "res://Prefabs/Item/Models/ModelDiamondRed.tscn"

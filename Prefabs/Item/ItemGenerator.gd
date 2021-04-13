@@ -46,12 +46,12 @@ const itemDictionary = {
 		effects = []
 	},
 }
-
-static func get_item(id):
+#
+func get_item(id):
 	var itemDefinition = itemDictionary[id]
 	if(itemDefinition == null):
 		return null
-	
+
 	var item = Item.new()
 	item.id = id
 	item.item_name = itemDefinition.name
@@ -62,11 +62,11 @@ static func get_item(id):
 		item.stack_max_size = itemDefinition.stack_max_size
 	else:
 		item.stack_max_size = 1
-		
+
 	if(itemDefinition.sprite):
 		item.sprite = itemDefinition.sprite
 	return item
-	
+#
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

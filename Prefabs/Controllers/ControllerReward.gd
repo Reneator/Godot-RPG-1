@@ -1,5 +1,4 @@
 extends Node
-class_name ControllerReward
 
 
 func _on_reward_resolve(rewardee, victim):

@@ -1,5 +1,4 @@
 extends Node
-class_name ControllerDeath
 
 
 func _on_death_resolve(killer, victim):
